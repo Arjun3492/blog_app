@@ -1,12 +1,12 @@
-import 'package:blog_minimal/screens/create_post.dart';
+import 'package:blog_minimal/modules/post/view/create_post.dart';
 import 'package:blog_minimal/widgets/post_cell_widget.dart';
 import 'package:flutter/material.dart';
 
 class Post {
-  final String title;
-  final String image;
-  final String author;
-  final String date;
+  final String? title;
+  final String? image;
+  final String? author;
+  final String? date;
 
   Post({this.title, this.image, this.author, this.date});
 }
@@ -150,10 +150,10 @@ class HomePage extends StatelessWidget {
                           child: Container(
                             padding: EdgeInsets.all(10),
                             child: PostCellWidget(
-                                title: post.title,
-                                image: post.image,
-                                author: post.author,
-                                date: post.date,
+                                title: post.title ?? "",
+                                image: post.image ?? "",
+                                author: post.author ?? "",
+                                date: post.date ?? "",
                                 onClick: () => null),
                           ),
                         );

@@ -1,11 +1,11 @@
-import 'package:blog_minimal/screens/home_page.dart';
+import 'package:blog_minimal/modules/home/view/home_page.dart';
 import 'package:blog_minimal/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 class SignIn extends StatelessWidget {
-  const SignIn({Key key}) : super(key: key);
+  const SignIn({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

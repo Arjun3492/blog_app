@@ -7,15 +7,15 @@ class PostCellWidget extends StatelessWidget {
   final String date;
   final Function onClick;
   PostCellWidget(
-      {@required this.title,
-      @required this.image,
-      @required this.author,
-      @required this.date,
-      @required this.onClick});
+      {required this.title,
+      required this.image,
+      required this.author,
+      required this.date,
+      required this.onClick});
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: onClick,
+      onTap: () => onClick,
       child: Container(
         child: Row(
           children: [

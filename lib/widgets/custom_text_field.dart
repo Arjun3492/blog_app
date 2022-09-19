@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField({
-    Key key,
-    this.hint,
+    Key? key,
+    required this.hint,
   }) : super(key: key);
   final String hint;
   @override
