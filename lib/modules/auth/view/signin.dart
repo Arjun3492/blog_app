@@ -38,11 +38,11 @@ class SignIn extends StatelessWidget {
                     )),
                 Text('Email', style: TextStyle(fontWeight: FontWeight.bold)),
                 SizedBox(height: height * 0.01),
-                CustomTextField(hint: 'Enter Email'),
+                // CustomTextField(hint: 'Enter Email',),
                 SizedBox(height: height * 0.03),
                 Text('Password', style: TextStyle(fontWeight: FontWeight.bold)),
                 SizedBox(height: height * 0.01),
-                CustomTextField(hint: 'Enter Password'),
+                // CustomTextField(hint: 'Enter Password'),
                 SizedBox(height: height * 0.05),
                 Center(
                   child: Container(

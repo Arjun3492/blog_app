@@ -49,14 +49,14 @@ class CreatePost extends StatelessWidget {
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
               SizedBox(height: size.height * 0.005),
-              CustomTextField(hint: 'Enter Title'),
+              // CustomTextField(hint: 'Enter Title'),
               SizedBox(height: size.height * 0.03),
               Text(
                 'Description',
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
               SizedBox(height: size.height * 0.005),
-              CustomTextField(hint: 'Enter Description'),
+              // CustomTextField(hint: 'Enter Description'),
               SizedBox(height: size.height * 0.02),
               Align(
                 child: Container(
