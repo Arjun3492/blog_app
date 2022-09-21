@@ -76,7 +76,12 @@ class SignUp extends StatelessWidget {
                                 builder: (controller) => controller.loading
                                     ? CircularProgressIndicator()
                                     : Text("Sign-Up")))),
-                  )
+                  ),
+                  SizedBox(height: height * 0.05),
+                  GestureDetector(
+                    child: Text("GO TO SIGNIN"),
+                    onTap: () => controller.onClickSignIn(),
+                  ),
                 ],
               ),
             ),

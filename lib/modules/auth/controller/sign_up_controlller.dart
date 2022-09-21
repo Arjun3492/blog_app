@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class SignUpController extends GetxController {
-  final AuthController authController = Get.put(AuthController());
+  final AuthController authController =
+      Get.put(AuthController(), permanent: true);
   final usernameController = TextEditingController();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
@@ -22,13 +23,19 @@ class SignUpController extends GetxController {
       try {
         toggleLoading();
         await authController.signUpUserWithEmailAndPassword(
-            usernameController.text.trim(),
-            emailController.text.trim(),
-            passwordController.text.trim());
+            username: usernameController.text.trim(),
+            email: emailController.text.trim(),
+            password: passwordController.text.trim());
+
         Get.offAll(SignIn());
       } finally {
         toggleLoading();
       }
     }
+  }
+
+  //goto SignIn
+  onClickSignIn() {
+    Get.offAll(SignIn());
   }
 }
