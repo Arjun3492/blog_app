@@ -1,4 +1,6 @@
 import 'package:blog_minimal/core/constants/firebase_constants.dart';
+import 'package:blog_minimal/core/constants/firestore_constants.dart';
+import 'package:blog_minimal/modules/auth/model/user_model.dart';
 import 'package:blog_minimal/modules/auth/view/signin.dart';
 import 'package:blog_minimal/modules/home/view/home_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -47,6 +49,12 @@ class AuthController extends GetxController {
       UserCredential userCred = await auth.createUserWithEmailAndPassword(
           email: email, password: password);
       await userCred.user?.updateDisplayName(username);
+      final user = UserModel.fromMap({
+        'username': username ?? "",
+        'email': email ?? "",
+        'uid': userCred.user?.uid ?? "",
+      });
+      await Firestore.setUserInfo(user.toMap(), user.uid!);
       Get.snackbar("Successfully registered", "");
     } catch (e) {
       Get.snackbar(e.toString(), "");
