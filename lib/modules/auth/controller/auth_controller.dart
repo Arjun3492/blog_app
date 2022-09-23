@@ -4,18 +4,17 @@ import 'package:blog_minimal/modules/auth/model/user_model.dart';
 import 'package:blog_minimal/modules/auth/view/signin.dart';
 import 'package:blog_minimal/modules/home/view/home_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+
 import 'package:get/get.dart';
 
 class AuthController extends GetxController {
   Rx<User?> _currentUser = Rx(auth.currentUser);
-  User? get currentUser => _currentUser.value;
-  onInit() {}
   onReady() {
     _currentUser.bindStream(auth.userChanges());
     ever(_currentUser, setInitialScreen);
   }
 
-// setting the initial screen of the project
+//Setting the initial screen of the project
   setInitialScreen(User? user) {
     try {
       if (user == null) {
@@ -28,7 +27,7 @@ class AuthController extends GetxController {
     }
   }
 
-//signing in the user and setting the username
+//Signing in the user
   Future<void> signInUserWithEmailAndPassword(
       String email, String password) async {
     try {
@@ -40,7 +39,7 @@ class AuthController extends GetxController {
     }
   }
 
-//Registering user
+//Registering user and setting the username
   Future<void> signUpUserWithEmailAndPassword(
       {required String username,
       required String email,
@@ -61,7 +60,7 @@ class AuthController extends GetxController {
     }
   }
 
-//signing out the user
+//Signing out the user
   Future<void> signOut() async {
     try {
       await auth.signOut();
@@ -70,6 +69,4 @@ class AuthController extends GetxController {
       Get.snackbar(e.toString(), "");
     }
   }
-
-  onClose() {}
 }

@@ -1,6 +1,7 @@
 import 'package:blog_minimal/modules/post/view/create_post.dart';
 import 'package:blog_minimal/widgets/post_cell_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Post {
   final String? title;
@@ -101,7 +102,7 @@ class HomePage extends StatelessWidget {
         child: Icon(Icons.add),
         backgroundColor: Color(0xFFFFD810),
         elevation: 0,
-        onPressed: () => null,
+        onPressed: () => Get.to(CreatePost()),
       ),
       body: SafeArea(
         minimum: const EdgeInsets.all(16),

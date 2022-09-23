@@ -1,6 +1,7 @@
 import 'package:blog_minimal/modules/auth/controller/auth_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:blog_minimal/modules/auth/view/signup.dart';
 
 class SignInController extends GetxController {
   final authController = Get.find<AuthController>();
@@ -23,5 +24,10 @@ class SignInController extends GetxController {
         toggleLoading();
       }
     }
+  }
+
+  //goto SignIn
+  onClickSignUp() {
+    Get.offAll(SignUp());
   }
 }
