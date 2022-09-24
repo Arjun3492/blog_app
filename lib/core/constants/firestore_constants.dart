@@ -14,4 +14,12 @@ class Firestore {
       String uid) async {
     return await userDocRef(uid).get();
   }
+
+  static DocumentReference<Map<String, dynamic>> postDocRef(String id) {
+    return db.collection("posts").doc(id);
+  }
+
+  static Future<void> setPostInfo(Map<String, dynamic> data, String id) async {
+    await postDocRef(id).set(data);
+  }
 }

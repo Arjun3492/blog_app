@@ -1,6 +1,5 @@
 import 'package:blog_minimal/core/constants/validators.dart';
 import 'package:blog_minimal/modules/auth/controller/sign_up_controlller.dart';
-import 'package:blog_minimal/modules/auth/view/signin.dart';
 import 'package:blog_minimal/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

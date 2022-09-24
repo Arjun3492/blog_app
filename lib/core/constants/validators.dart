@@ -35,3 +35,15 @@ String? validateName(String? name) {
   }
   return null;
 }
+String? validateTitle(String? name) {
+  if (name!.isEmpty) {
+    return "Please enter the title";
+  }
+  return null;
+}
+String? validateDesc(String? name) {
+  if (name!.isEmpty) {
+    return "Please enter the Desc";
+  }
+  return null;
+}

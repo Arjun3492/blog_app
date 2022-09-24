@@ -3,8 +3,6 @@ import 'package:blog_minimal/modules/auth/controller/sign_in_controller.dart';
 import 'package:blog_minimal/modules/home/view/home_page.dart';
 import 'package:blog_minimal/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 
 class SignIn extends StatelessWidget {

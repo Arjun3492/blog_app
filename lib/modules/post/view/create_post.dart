@@ -66,7 +66,7 @@ class CreatePost extends StatelessWidget {
                 SizedBox(height: size.height * 0.005),
                 CustomTextField(
                     hint: 'Enter Title',
-                    validator: validateName,
+                    validator: validateTitle,
                     controller: controller.titleController),
                 SizedBox(height: size.height * 0.03),
                 Text(
@@ -76,7 +76,7 @@ class CreatePost extends StatelessWidget {
                 SizedBox(height: size.height * 0.005),
                 CustomTextField(
                     hint: 'Enter Description',
-                    validator: validateName,
+                    validator: validateDesc,
                     controller: controller.descController),
                 SizedBox(height: size.height * 0.02),
                 Align(
@@ -87,8 +87,13 @@ class CreatePost extends StatelessWidget {
                           style: ButtonStyle(
                               backgroundColor:
                                   MaterialStateProperty.all(Color(0xFFFFD810))),
-                          onPressed: () => null,
-                          child: Text('Create Post'))),
+                          onPressed: () => controller.savePost(),
+                          child: Obx(() {
+                            if (controller.loading.value) {
+                              return CircularProgressIndicator();
+                            }
+                            return Text('Create Post');
+                          }))),
                 )
               ],
             ),
