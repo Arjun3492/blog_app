@@ -55,7 +55,7 @@ class CreatePostController extends GetxController {
           await Firestore.setPostInfo(postModel.toMap(), id);
           Get.back();
           Get.snackbar("Post saved successfully", "");
-          await homeController.fetchPosts();
+          homeController.updatePosts(postModel);
         } catch (e) {
           Get.snackbar('Error', e.toString());
         } finally {

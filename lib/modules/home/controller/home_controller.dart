@@ -23,6 +23,11 @@ class HomeController extends GetxController {
     }
   }
 
+  updatePosts(PostModel post) {
+    posts.add(post);
+    update();
+  }
+
   @override
   void onInit() {
     fetchPosts();
