@@ -4,49 +4,7 @@ import 'package:blog_minimal/widgets/post_cell_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class Post {
-  final String? title;
-  final String? image;
-  final String? author;
-  final String? date;
-
-  Post({this.title, this.image, this.author, this.date});
-}
-
 class HomePage extends StatelessWidget {
-  final data = [
-    Post(
-      image: 'assets/images/ikigai.jpg',
-      title: 'Finding your ikigai in your middle age',
-      author: 'John Johny',
-      date: '25 Mar 2020',
-    ),
-    Post(
-      image: 'assets/images/leader.jpg',
-      title: 'How to Lead Before You Are in Charge',
-      author: 'John Johny',
-      date: '24 Mar 2020',
-    ),
-    Post(
-      image: 'assets/images/minimal.jpg',
-      title: 'How Minimalism Brought Me',
-      author: 'John Johny',
-      date: '15 Mar 2020',
-    ),
-    Post(
-      image: 'assets/images/colors.jpg',
-      title: 'The Most Important Color In UI Design',
-      author: 'John Johny',
-      date: '11 Mar 2020',
-    ),
-    Post(
-      image: 'assets/images/leader.jpg',
-      title: 'How to Lead Before You Are in Charge',
-      author: 'John Johny',
-      date: '24 Mar 2020',
-    ),
-  ];
-
   @override
   Widget build(BuildContext context) {
     final HomeController controller = Get.put(HomeController());
