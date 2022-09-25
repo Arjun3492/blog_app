@@ -1,7 +1,8 @@
-import 'package:blog_minimal/core/constants/firebase_constants.dart';
 import 'package:blog_minimal/core/constants/firestorage_constants.dart';
 import 'package:blog_minimal/core/constants/firestore_constants.dart';
 import 'package:blog_minimal/core/constants/localStorage.dart';
+import 'package:blog_minimal/modules/home/controller/home_controller.dart';
+import 'package:blog_minimal/modules/home/view/home_page.dart';
 import 'package:blog_minimal/modules/post/model/post_model.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/foundation.dart';
@@ -11,6 +12,7 @@ import 'package:image_picker/image_picker.dart';
 
 class CreatePostController extends GetxController {
   final formKey = GlobalKey<FormState>();
+  final HomeController homeController = Get.find();
   final titleController = TextEditingController();
   final descController = TextEditingController();
   Rx<bool> loading = Rx(false);
@@ -51,7 +53,9 @@ class CreatePostController extends GetxController {
           });
 
           await Firestore.setPostInfo(postModel.toMap(), id);
+          Get.back();
           Get.snackbar("Post saved successfully", "");
+          await homeController.fetchPosts();
         } catch (e) {
           Get.snackbar('Error', e.toString());
         } finally {
