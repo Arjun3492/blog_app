@@ -11,7 +11,7 @@ import 'package:get/get.dart';
 class AuthController extends GetxController {
   Rx<User?> _currentUser = Rx(auth.currentUser);
   onReady() {
-    _currentUser.bindStream(auth.userChanges());
+    _currentUser.bindStream(auth.authStateChanges());
     ever(_currentUser, setInitialScreen);
   }
 
